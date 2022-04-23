@@ -14,6 +14,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <script>
+        window.User = {
+            id: {{ optional(auth()->user())->id }},
+            // avatar: '{{ optional(auth()->user())->avatar() }}'
+            avatar: 'https://media-exp1.licdn.com/dms/image/C5103AQFvJLt35KxJZQ/profile-displayphoto-shrink_200_200/0/1517400280887?e=1652918400&v=beta&t=4hDSD5lwY7oZwIzjffNQRxo-WKZB0gflZ_sDFSAo_zY'
+        }
+    </script>
 </head>
 <body>
     <div id="app">
