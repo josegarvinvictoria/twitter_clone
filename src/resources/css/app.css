@@ -1,0 +1,42 @@
+/*body {
+    background-color: white;
+}
+
+html, body, #app  {
+    height: 100%;
+}
+
+.card .card-body {
+    margin-top: 100px;
+}
+
+.btn.btn-primary {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    width: 250px;
+    font-weight: 700;
+    height: 35px;
+}
+
+input {
+    border: 1px solid #8080803d;
+    height: 35px;
+    border-radius: 5px;
+}
+
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form .btn.btn-primary {
+    margin-top: 20px;
+}
+
+.card-header {
+    font-size: 25px
+}*/
