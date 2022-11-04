@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tweets', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('user_id')->unsigned()->index();
-            $table->string('body', 250)->nullable();
-            $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        Schema::table('tweets', function (Blueprint $table) {
+            $table->string('type');
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tweets');
+        Schema::table('tweets', function (Blueprint $table) {
+            $table->dropColumn('type');
+        });
     }
 };
