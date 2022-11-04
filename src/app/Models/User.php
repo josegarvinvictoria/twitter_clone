@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Like;
 use App\Models\Tweet;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -52,7 +53,9 @@ class User extends Authenticatable
         return $this->hasMany(Tweet::class);
     }
 
-
+    public function hasLiked(Tweet $tweet) {
+        return $this->likes->contains('tweet_id', $tweet->id);
+    }
 
     public function following() {
         return $this->belongsToMany(
@@ -70,5 +73,9 @@ class User extends Authenticatable
         return $this->hasManyThrough(
             Tweet::class, Follower::class, 'user_id', 'user_id', 'id', 'following_id'
         );
+    }
+
+    public function likes() {
+        return $this->hasMany(Like::class);
     }
 }

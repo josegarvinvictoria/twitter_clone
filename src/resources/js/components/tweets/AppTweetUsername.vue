@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span class="text-gray-300 font-bold">{{ user.name }} <span class="text-gray-600">@{{ user.username }}</span></span>
+        <span class="text-gray-300 font-bold">{{ user.name }} <span class="text-gray-500">@{{ user.username }}</span></span>
     </div>
 </template>
 <script>
