@@ -4,6 +4,8 @@ WORKDIR /var/www/html
 
 COPY src .
 
-RUN docker-php-ext-install pdo pdo_mysql
+RUN apk update && \
+    apk add --no-cache npm  \
+    && docker-php-ext-install pdo pdo_mysql
 
 RUN chown -R www-data:www-data /var/www/html
