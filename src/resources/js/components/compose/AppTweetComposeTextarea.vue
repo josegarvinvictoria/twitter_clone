@@ -1,0 +1,29 @@
+<template>
+    <textarea
+        class="bg-gray-900 w-full outline-none text-gray-300 text-lg resize-none mb-2"
+        placeholder="What's happening?"
+        autofocus
+        @input="handleInput($event)"
+        :value="value"
+    ></textarea>
+</template>
+
+<script>
+    export default {
+        props: {
+            value: {
+                required: false
+            }
+        },
+        methods: {
+            handleInput(e) {
+                this.$emit('input', e.target.value);
+                this.resize(e);
+            },
+            resize(e) {
+                e.target.style.height = 'auto';
+                e.target.style.height = `${e.target.scrollHeight}px`;
+            }
+        }
+    }
+</script>

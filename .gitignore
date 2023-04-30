@@ -3,6 +3,7 @@
 /src/public/storage
 /src/storage/*.key
 /src/vendor
+/src/public/vendor
 /src.env
 /.vscode
 NOTAS.txt

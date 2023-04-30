@@ -460,6 +460,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
 }
@@ -468,6 +471,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .right-0 {
   right: 0px;
+}
+.z-50 {
+  z-index: 50;
 }
 .m-0 {
   margin: 0px;
@@ -563,6 +569,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-full {
   width: 100%;
 }
+.w-56 {
+  width: 14rem;
+}
+.w-3 {
+  width: 0.75rem;
+}
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -571,6 +583,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .resize-none {
   resize: none;
+}
+.resize {
+  resize: both;
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -592,6 +607,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .rounded-full {
   border-radius: 9999px;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 .border {
   border-width: 1px;
@@ -619,6 +637,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -627,13 +649,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+.fill-current {
+  fill: currentColor;
 }
 .p-6 {
   padding: 1.5rem;
@@ -677,11 +702,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
 .font-semibold {
   font-weight: 600;
 }
 .font-bold {
   font-weight: 700;
+}
+.font-medium {
+  font-weight: 500;
 }
 .leading-7 {
   line-height: 1.75rem;
@@ -720,6 +756,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -859,46 +899,85 @@ a {
     padding-right: 2rem;
   }
 }
-/*body {
-    background-color: white;
-}
-
-html, body, #app  {
-    height: 100%;
-}
-
-.card .card-body {
-    margin-top: 100px;
-}
-
-.btn.btn-primary {
-    background-color: black;
-    color: white;
-    border-radius: 20px;
-    width: 250px;
-    font-weight: 700;
-    height: 35px;
-}
-
-input {
-    border: 1px solid #8080803d;
-    height: 35px;
-    border-radius: 5px;
-}
-
-
-form {
+#login-page {
+    background-color: #f2f2f2;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-form .btn.btn-primary {
-    margin-top: 20px;
+#login-page .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 400px;
+    -webkit-animation: slide-in-top 0.5s ease-out;
+            animation: slide-in-top 0.5s ease-out;
 }
 
-.card-header {
-    font-size: 25px
-}*/
+#login-page .card-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+#login-page .form-control {
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    font-size: 16px;
+    font-family: "Helvetica Neue", sans-serif;
+    transition: all 0.3s ease-out;
+}
+
+#login-page .form-control:focus {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+#login-page .btn {
+    background-color: #1da1f2;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px 40px;
+    box-shadow: 0px 0px 10px rgba(29, 161, 242, 0.3);
+    transition: all 0.3s ease-out;
+}
+
+#login-page .btn:hover {
+    background-color: #1a8fe1;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgba(29, 161, 242, 0.5);
+}
+
+@-webkit-keyframes slide-in-top {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
